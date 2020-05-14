@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/hv2pxqilc1j5x7k2?svg=true)](https://ci.appveyor.com/project/Cancelkam/pageobjecttransfermoney)
