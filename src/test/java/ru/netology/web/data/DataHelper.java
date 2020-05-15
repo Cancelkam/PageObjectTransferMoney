@@ -1,5 +1,6 @@
 package ru.netology.web.data;
 
+import lombok.Data;
 import lombok.Value;
 
 public class DataHelper {
@@ -25,6 +26,19 @@ public class DataHelper {
   }
 
   public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
+
     return new VerificationCode("12345");
   }
+
+  @Data
+  public static class CartInfo {
+    private int cardBalance;
+    private String cardNumber;
+
+      public CartInfo(int cardBalance, String cardNumber) {
+        this.cardBalance = cardBalance;
+        this.cardNumber = cardNumber;
+      }
+  }
+
 }
