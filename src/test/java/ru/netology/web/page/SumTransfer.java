@@ -4,11 +4,12 @@ import com.codeborne.selenide.SelenideElement;
 import lombok.Data;
 
 import static com.codeborne.selenide.Selenide.$;
+import static org.openqa.selenium.Keys.*;
 
 @Data
 public class SumTransfer {
 
-    private SelenideElement sumField = $("[data-test-id=amount] .input .input__control");
+    private SelenideElement sumField = $("[data-test-id='amount'] .input .input__control");
     private SelenideElement fromCardField = $(".input__control[type='tel']");
     private SelenideElement transferMoneyButton = $("[data-test-id='action-transfer']");
     private SelenideElement cancelButton = $("[data-test-id='action-cancel']");
@@ -28,6 +29,10 @@ public class SumTransfer {
         return new DashboardPage();
     }
 
+    public void clearField() {
+        sumField.sendKeys(chord(CONTROL, "a"), DELETE);
+        fromCardField.sendKeys(chord(CONTROL, "a"), DELETE);
+    }
 }
 
 
